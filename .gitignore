@@ -1,0 +1,15 @@
+# Work in Progress
+/Fundamental
+
+
+# Too big for github
+mlruns/
+Qdata/
+Analysis/
+artifacts/
+
+
+# Unnecesary
+/.vscode
+/.invest_venv
+__pycache__/
