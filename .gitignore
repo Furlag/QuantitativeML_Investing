@@ -4,8 +4,8 @@
 
 # Too big for github
 mlruns/
-# Qdata/
 Analysis/
+# Qdata/
 # artifacts/
 
 
