@@ -9,6 +9,7 @@ import yfinance as yf
 
 def YahooQdownloader(
     tickers, start=None, end=None, period="max",
+    append_index_data='',
     qlib_dir="QData", dump_mode="dump_all",
     sleep=5, batch_size=50,
     threads=True, python_path=None
@@ -25,6 +26,9 @@ def YahooQdownloader(
         period : str
             Valid periods: 1d,5d,1mo,3mo,6mo,1y,2y,5y,10y,ytd,max
             Either Use period parameter or use start and end
+        append_index_data: str
+            Create extra columns on all the tickers from the selected ticker. Should be the index for the market.
+            All extra columns will follow the convention "foo_idx".
         qlib_dir: str
             qlib(dump) data director
         dump_mode: str
@@ -81,6 +85,13 @@ def YahooQdownloader(
     ################################
     # Download
     ################################
+    if append_index_data != '':
+        index_data = yf.download(append_index_data, start=start, end=end, period=period,
+                                 interval="1d", group_by="ticker", threads=threads)
+        index_data.columns = [str(col) + '_idx' for col in index_data.columns]
+        index_data = index_data.reset_index()
+        index_data.columns = index_data.columns.str.lower()
+
     first_iteration = True
     for ticker_batch in ticker_batches:
         if not first_iteration:
@@ -96,6 +107,10 @@ def YahooQdownloader(
         for ticker in ticker_batch:
             ticker_data = yahoo_data[ticker].reset_index()
             ticker_data.columns = ticker_data.columns.str.lower()
+
+            if append_index_data != '':
+                ticker_data = ticker_data.merge(index_data, on='date', how='left', suffixes=("", "_idx"))
+
             ticker_data.to_csv("%s/%s/%s.csv" % (path, dock_folder, ticker))
 
     # -------------------------------------------------------
@@ -111,7 +126,9 @@ def YahooQdownloader(
         + " --csv_path " + path + "/" + dock_folder
         + " --qlib_dir " + qlib_dir
         + " --date_field_name date"
-        + " --include_fields open,close,high,low,volume"
+        + """ --include_fields open,close,high,low,volume,
+            open_idx,high_idx,low_idx,close_idx,volume_idx
+        """
     )
     os.system(cmd_command)
 

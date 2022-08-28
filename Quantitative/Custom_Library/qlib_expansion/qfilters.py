@@ -32,7 +32,7 @@ class Filters():  # "module_path": "qlib.data.filter"
             "filter_type": "NameDFilter",
             "name_rule_re": """
                 |IBE.MC|ITX.MC|SAN.MC|BBVA.MC|CLNX.MC|AMS.MC|TEF.MC|FER.MC|CABK.MC|AENA.MC|
-                |REP.MC|REE.MC|SGRE.MC|ELE.MC|IAG.MC|GRF.MC|ANA.MC|ACS.MC|MTS.MC|ENG.MC|
+                |REP.MC|RED.MC|SGRE.MC|ELE.MC|IAG.MC|GRF.MC|ANA.MC|ACS.MC|MTS.MC|ENG.MC|
                 |NTGY.MC|FDR.MC|MRL.MC|BKT.MC|COL.MC|MAP.MC|SAB.MC|ACX.MC|CIE.MC|ROVI.MC|
                 |SLR.MC|IDR.MC|ALM.MC|PHM.MC|MEL.MC|
 

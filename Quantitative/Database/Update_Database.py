@@ -33,7 +33,7 @@ tickers = (
 )
 qlib_dir = path + "SPAIN"
 
-YahooQdownloader(tickers, start=start, end=end, qlib_dir=qlib_dir, dump_mode="dump_update")
+YahooQdownloader(tickers, start=start, end=end, qlib_dir=qlib_dir, append_index_data='^IBEX', dump_mode="dump_update")
 
 ###################
 # US
@@ -44,27 +44,5 @@ tickers = (
     + T['^GSPC'].dropna().tolist() + T['^SP600'].dropna().tolist()
 )
 qlib_dir = path + "US"
-YahooQdownloader(tickers, start=start, end=end, qlib_dir=qlib_dir, dump_mode="dump_update")
-"""
-
-###################
-# Europe
-###################
-"""
-tickers = (
-    ['^STOXX', '^N100']
-    # + T['^IBEX'].dropna().tolist() + T['INDC.MC'].dropna().tolist()
-    + T['^GDAXI'].dropna().tolist() + T['MDAX.DE'].dropna().tolist()
-    + T['^FCHI'].dropna().tolist() + T['^CN20'].dropna().tolist() + T['^CM100'].dropna().tolist()
-    + T['FTSEMIB.MI'].dropna().tolist()
-    + T['^AEX'].dropna().tolist() + T['^AMX'].dropna().tolist()
-    + T['^BFX'].dropna().tolist() + T['BELM.BR'].dropna().tolist()
-    + T['^IETP'].dropna().tolist()
-    + T['^ATX'].dropna().tolist()
-    + T['PSI20.LS'].dropna().tolist()
-    + T['^OMXC25'].dropna().tolist() + T['OMXCMCPI.CO'].dropna().tolist()
-)
-qlib_dir = path + "EU"
-
 YahooQdownloader(tickers, start=start, end=end, qlib_dir=qlib_dir, dump_mode="dump_update")
 """
