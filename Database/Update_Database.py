@@ -26,7 +26,7 @@ tickers = (
 )
 
 qlib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Qdata", "SPAIN")
-YahooQdownloader(tickers, start=start, end=end, qlib_dir=qlib_dir, append_index_data='^IBEX', dump_mode="dump_update")
+yahoo_downloader(tickers, start=start, end=end, qlib_dir=qlib_dir, append_index_data='^IBEX', dump_mode="dump_update")
 
 ###################
 # US
