@@ -1,19 +1,12 @@
-from Scripts.YahooQdownloader import YahooQdownloader  # Noqa
+from scripts.download import yahoo_downloader  # Noqa
+
 import os
 import pandas as pd
 from datetime import datetime, timedelta
 
 
-dir_path = os.path.dirname(os.path.abspath(__file__))
-
-
-# Path of the Qlib Database
-path = dir_path + "/Qdata/"
-print(path)
-
-
 # Read tickers
-T = pd.read_csv('C:/Projects/Investing/Tickers/Ticker_Lookup.csv', skiprows=1)
+T = pd.read_csv('C:/Projects/Investing/Quantitative/Database/Ticker_Lookup.csv', skiprows=1)
 print(T.head())
 
 
@@ -31,8 +24,8 @@ tickers = (
     ['^IBEX', 'INDC.MC']
     + T['^IBEX'].dropna().tolist() + T['INDC.MC'].dropna().tolist()
 )
-qlib_dir = path + "SPAIN"
 
+qlib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Qdata", "SPAIN")
 YahooQdownloader(tickers, start=start, end=end, qlib_dir=qlib_dir, append_index_data='^IBEX', dump_mode="dump_update")
 
 ###################
@@ -43,6 +36,4 @@ tickers = (
     ['^GSPC', '^SP600']
     + T['^GSPC'].dropna().tolist() + T['^SP600'].dropna().tolist()
 )
-qlib_dir = path + "US"
-YahooQdownloader(tickers, start=start, end=end, qlib_dir=qlib_dir, dump_mode="dump_update")
 """

@@ -7,16 +7,23 @@ import time
 import yfinance as yf
 
 
-def YahooQdownloader(
-    tickers, start=None, end=None, period="max",
+def yahoo_downloader(
+    tickers,
+    qlib_dir, dump_mode="dump_all",
+    start=None, end=None, period="max",
     append_index_data='',
-    qlib_dir="QData", dump_mode="dump_all",
     sleep=5, batch_size=50,
     threads=True, python_path=None
 ):
     '''
         tickers : str, list
             List of tickers to download
+        qlib_dir: str
+            qlib(dump) data director
+        dump_mode: str
+            "dump_all": Creates Qdata from zero. If a data for the same company already exists it will be deleted.
+            "dump_update": Updates the data on existing dataset. Existing values wont be changed.
+            "dump_fix": Replaces values on existing dataset.
         start: str
             Download start date string (YYYY-MM-DD) or _datetime.
             Default is 1900-01-01
@@ -29,12 +36,6 @@ def YahooQdownloader(
         append_index_data: str
             Create extra columns on all the tickers from the selected ticker. Should be the index for the market.
             All extra columns will follow the convention "foo_idx".
-        qlib_dir: str
-            qlib(dump) data director
-        dump_mode: str
-            "dump_all": Creates Qdata from zero. If a data for the same company already exists it will be deleted.
-            "dump_update": Updates the data on existing dataset. Existing values wont be changed.
-            "dump_fix": Replaces values on existing dataset.
         sleep: int
             Number of seconds to wait after each batch download.
 
@@ -85,7 +86,7 @@ def YahooQdownloader(
     ################################
     # Download
     ################################
-    if append_index_data != '':
+    if append_index_data != '':  # Download index data for later appending
         index_data = yf.download(append_index_data, start=start, end=end, period=period,
                                  interval="1d", group_by="ticker", threads=threads)
         index_data.columns = [str(col) + '_idx' for col in index_data.columns]
@@ -103,12 +104,12 @@ def YahooQdownloader(
         yahoo_data = yf.download(ticker_batch, start=start, end=end, period=period,
                                  interval="1d", group_by="ticker", threads=threads)
 
-        # Save .csv's in dock
+        # Save .csv's in dock folder
         for ticker in ticker_batch:
             ticker_data = yahoo_data[ticker].reset_index()
             ticker_data.columns = ticker_data.columns.str.lower()
 
-            if append_index_data != '':
+            if append_index_data != '':  # append index data if any
                 ticker_data = ticker_data.merge(index_data, on='date', how='left', suffixes=("", "_idx"))
 
             ticker_data.to_csv("%s/%s/%s.csv" % (path, dock_folder, ticker))
@@ -126,9 +127,7 @@ def YahooQdownloader(
         + " --csv_path " + path + "/" + dock_folder
         + " --qlib_dir " + qlib_dir
         + " --date_field_name date"
-        + """ --include_fields open,close,high,low,volume,
-            open_idx,high_idx,low_idx,close_idx,volume_idx
-        """
+        + """ --include_fields open,close,high,low,volume,open_idx,high_idx,low_idx,close_idx,volume_idx"""
     )
     os.system(cmd_command)
 
