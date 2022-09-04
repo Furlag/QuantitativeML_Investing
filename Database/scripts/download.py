@@ -1,10 +1,15 @@
 import os
 import shutil
 import pathlib
+import sys
 
 import time
 
 import yfinance as yf
+
+# To import from other scripts, first we need to append the path to sys
+sys.path.append(str(pathlib.Path(__file__).parent.resolve()))
+from dump_bin import DumpDataAll, DumpDataFix, DumpDataUpdate  # noqa
 
 
 def yahoo_downloader(
@@ -13,7 +18,7 @@ def yahoo_downloader(
     start=None, end=None, period="max",
     append_index_data='',
     sleep=5, batch_size=50,
-    threads=True, python_path=None
+    threads=True  # , python_path=None
 ):
     '''
         tickers : str, list
@@ -121,15 +126,46 @@ def yahoo_downloader(
     ################################
 
     # Dump Data as Qlib database
+    csv_path = path + "/" + dock_folder
+    fields = 'open,close,high,low,volume,open_idx,high_idx,low_idx,close_idx,volume_idx'
+
+    if dump_mode == 'dump_all':
+        data_dumper = DumpDataAll(
+            csv_path=csv_path, qlib_dir=qlib_dir,
+            date_field_name='date',
+            include_fields=fields
+        )
+        data_dumper.dump()
+
+    elif dump_mode == 'dump_update':
+        data_dumper = DumpDataUpdate(
+            csv_path=csv_path, qlib_dir=qlib_dir,
+            date_field_name='date',
+            include_fields=fields
+        )
+        data_dumper.dump()
+
+    elif dump_mode == 'dump_fix':
+        data_dumper = DumpDataFix(
+            csv_path=csv_path, qlib_dir=qlib_dir,
+            date_field_name='date',
+            include_fields=fields
+        )
+        data_dumper.dump()
+
+    """
+    # Dump Data as Qlib database
     python_path = "python" if python_path is None else python_path
     cmd_command = (
         python_path + " " + path + "/dump_bin.py " + dump_mode
         + " --csv_path " + path + "/" + dock_folder
         + " --qlib_dir " + qlib_dir
         + " --date_field_name date"
-        + """ --include_fields open,close,high,low,volume,open_idx,high_idx,low_idx,close_idx,volume_idx"""
+        + " --include_fields open,close,high,low,volume,open_idx,high_idx,low_idx,close_idx,volume_idx"
     )
     os.system(cmd_command)
+    """
+    # -------------------------------------------------------
 
     # Delete dock folder
     shutil.rmtree(dock_folder)

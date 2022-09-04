@@ -6,16 +6,18 @@ from datetime import datetime, timedelta
 
 
 # Read tickers
-T = pd.read_csv('C:/Projects/Investing/Quantitative/Database/Ticker_Lookup.csv', skiprows=1)
+T = pd.read_csv('C:/Projects/Investing/QuantitativeML_Investing/Database/Ticker_Lookup.csv', skiprows=1)
 print(T.head())
 
 
 # Dates
-start = (datetime.today() - timedelta(days=5)).strftime('%Y-%m-%d')
+start = (datetime.today() - timedelta(days=10)).strftime('%Y-%m-%d')
 end = (datetime.today() + timedelta(days=1)).strftime('%Y-%m-%d')
+
 
 ########################################################################################################################
 ########################################################################################################################
+
 
 ###################
 # Spain
@@ -26,7 +28,12 @@ tickers = (
 )
 
 qlib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Qdata", "SPAIN")
-yahoo_downloader(tickers, start=start, end=end, qlib_dir=qlib_dir, append_index_data='^IBEX', dump_mode="dump_update")
+yahoo_downloader(
+    tickers, start=start, end=end, qlib_dir=qlib_dir,
+    append_index_data='^IBEX',
+    dump_mode="dump_update",
+    # python_path=python_path
+)
 
 ###################
 # US
