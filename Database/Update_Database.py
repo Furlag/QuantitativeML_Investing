@@ -1,4 +1,4 @@
-from scripts.download import yahoo_downloader  # Noqa
+from Scripts.download import yahoo_downloader  # Noqa
 
 import os
 import pandas as pd
@@ -11,7 +11,7 @@ print(T.head())
 
 
 # Dates
-start = (datetime.today() - timedelta(days=10)).strftime('%Y-%m-%d')
+start = (datetime.today() - timedelta(days=5)).strftime('%Y-%m-%d')
 end = (datetime.today() + timedelta(days=1)).strftime('%Y-%m-%d')
 
 
@@ -29,10 +29,9 @@ tickers = (
 
 qlib_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Qdata", "SPAIN")
 yahoo_downloader(
-    tickers, start=start, end=end, qlib_dir=qlib_dir,
+    tickers=tickers, qlib_dir=qlib_dir, start=start, end=end,
     append_index_data='^IBEX',
-    dump_mode="dump_update",
-    # python_path=python_path
+    dump_mode="dump_update"
 )
 
 ###################

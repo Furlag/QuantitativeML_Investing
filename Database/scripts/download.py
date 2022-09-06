@@ -7,10 +7,6 @@ import time
 
 import yfinance as yf
 
-# To import from other scripts, first we need to append the path to sys
-sys.path.append(str(pathlib.Path(__file__).parent.resolve()))
-from dump_bin import DumpDataAll, DumpDataFix, DumpDataUpdate  # noqa
-
 
 def yahoo_downloader(
     tickers,
@@ -18,13 +14,14 @@ def yahoo_downloader(
     start=None, end=None, period="max",
     append_index_data='',
     sleep=5, batch_size=50,
-    threads=True  # , python_path=None
+    threads=True,
+    version=2
 ):
     '''
         tickers : str, list
-            List of tickers to download
+            List of tickers to download.
         qlib_dir: str
-            qlib(dump) data director
+            qlib(dump) data directory.
         dump_mode: str
             "dump_all": Creates Qdata from zero. If a data for the same company already exists it will be deleted.
             "dump_update": Updates the data on existing dataset. Existing values wont be changed.
@@ -43,26 +40,31 @@ def yahoo_downloader(
             All extra columns will follow the convention "foo_idx".
         sleep: int
             Number of seconds to wait after each batch download.
+        batch_size: int
+            Size of the download batches.
+        threads: bool
+            Whether to use threads or not.
 
         Other possible parameters for yf.download can be seen in:
         https://github.com/ranaroussi/yfinance/blob/master/yfinance/multi.py
+
+
+        REMEMBER: dump_bin.py must be in the same directory as this file!
     '''
 
+    dir_path = str(pathlib.Path(__file__).parent.resolve())
+
     ################################
-    # Create docking folder
+    # Create dock folder
     ################################
 
-    dock_folder = "QLib_Yahoo_Data_Dock_Folder"
-
-    # Change the current directory to this file directory
-    path = str(pathlib.Path(__file__).parent.resolve())
-    os.chdir(path)
+    dock_path = os.path.join(dir_path, "Yahoo_Data_Dock")
 
     try:  # Try to create the directory
-        os.mkdir(dock_folder)
+        os.mkdir(dock_path)
     except OSError:  # The directory already exists
-        shutil.rmtree(dock_folder)
-        os.mkdir(dock_folder)
+        shutil.rmtree(dock_path)
+        os.mkdir(dock_path)
 
     # -------------------------------------------------------
 
@@ -91,7 +93,7 @@ def yahoo_downloader(
     ################################
     # Download
     ################################
-    if append_index_data != '':  # Download index data for later appending
+    if append_index_data != '':  # Download index data to add later
         index_data = yf.download(append_index_data, start=start, end=end, period=period,
                                  interval="1d", group_by="ticker", threads=threads)
         index_data.columns = [str(col) + '_idx' for col in index_data.columns]
@@ -114,10 +116,10 @@ def yahoo_downloader(
             ticker_data = yahoo_data[ticker].reset_index()
             ticker_data.columns = ticker_data.columns.str.lower()
 
-            if append_index_data != '':  # append index data if any
+            if append_index_data != '':  # add index data if any
                 ticker_data = ticker_data.merge(index_data, on='date', how='left', suffixes=("", "_idx"))
 
-            ticker_data.to_csv("%s/%s/%s.csv" % (path, dock_folder, ticker))
+            ticker_data.to_csv("%s/%s.csv" % (dock_path, ticker))
 
     # -------------------------------------------------------
 
@@ -125,47 +127,19 @@ def yahoo_downloader(
     # Dump data and clean memory
     ################################
 
+    python_path = sys.executable
+
     # Dump Data as Qlib database
-    csv_path = path + "/" + dock_folder
-    fields = 'open,close,high,low,volume,open_idx,high_idx,low_idx,close_idx,volume_idx'
-
-    if dump_mode == 'dump_all':
-        data_dumper = DumpDataAll(
-            csv_path=csv_path, qlib_dir=qlib_dir,
-            date_field_name='date',
-            include_fields=fields
-        )
-        data_dumper.dump()
-
-    elif dump_mode == 'dump_update':
-        data_dumper = DumpDataUpdate(
-            csv_path=csv_path, qlib_dir=qlib_dir,
-            date_field_name='date',
-            include_fields=fields
-        )
-        data_dumper.dump()
-
-    elif dump_mode == 'dump_fix':
-        data_dumper = DumpDataFix(
-            csv_path=csv_path, qlib_dir=qlib_dir,
-            date_field_name='date',
-            include_fields=fields
-        )
-        data_dumper.dump()
-
-    """
-    # Dump Data as Qlib database
-    python_path = "python" if python_path is None else python_path
     cmd_command = (
-        python_path + " " + path + "/dump_bin.py " + dump_mode
-        + " --csv_path " + path + "/" + dock_folder
+        python_path + " " + dir_path + "/dump_bin.py " + dump_mode
+        + " --csv_path " + dock_path
         + " --qlib_dir " + qlib_dir
         + " --date_field_name date"
         + " --include_fields open,close,high,low,volume,open_idx,high_idx,low_idx,close_idx,volume_idx"
     )
     os.system(cmd_command)
-    """
+
     # -------------------------------------------------------
 
     # Delete dock folder
-    shutil.rmtree(dock_folder)
+    shutil.rmtree(dock_path)
