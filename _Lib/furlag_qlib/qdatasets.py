@@ -1053,7 +1053,7 @@ def dataset_features_ts_185():
 
     # Accumulation/Distribution Line
     fields += [AD_Line() + " / " + AD_Line(d=1)]
-    names += ["AD_Line / AD_Line"]
+    names += ["AD_Line / AD_Line(1)"]
 
     # endregion
 
