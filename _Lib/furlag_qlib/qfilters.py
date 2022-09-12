@@ -62,8 +62,8 @@ class Filters():  # "module_path": "qlib.data.filter"
 ################################
 # Label filter generator
 ################################
-def generate_label_filters(expression, threshold=1.00):
-    label_filters = [
+def label_filter(expression, threshold=1.00):
+    label_filter = [
         {   # Filter extreme y values
             "filter_type": "ExpressionDFilter",
             "rule_expression": "And({ex} < {thr}, {ex} > -{thr})".format(ex=expression, thr=threshold),
@@ -74,4 +74,4 @@ def generate_label_filters(expression, threshold=1.00):
             "label_filter": True,
         }
     ]
-    return label_filters
+    return label_filter

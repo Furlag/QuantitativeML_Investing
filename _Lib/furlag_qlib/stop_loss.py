@@ -382,7 +382,7 @@ class StopLossLogics():
     ):
         pass
 
-    def generate_atr_stoploss(self, diff=1.5, of='$close', r=14):
+    def atr_stoploss(self, diff=1.5, of='$close', r=14):
         return """
             {of} - {diff} * Mean(
                 Greater(
