@@ -1,5 +1,5 @@
-from scripts.data_collector.us_index.collector import SP500Index, SP400Index
-from scripts.yfinance_collector import collect
+# from scripts.data_collector.us_index.collector import SP500Index, SP400Index
+from scripts.data_collector.yfinance.collector import collect
 
 import os
 import sys
