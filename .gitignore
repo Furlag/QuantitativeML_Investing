@@ -1,11 +1,7 @@
 # Too big for github
 mlruns/
 Analysis/
-# Qdata/
-# artifacts/
 
 
 # Unnecesary
-/.vscode
-/.invest_venv
 __pycache__/

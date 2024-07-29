@@ -2,24 +2,6 @@ from qlib.data.dataset.processor import Processor
 from qlib.data.dataset.processor import get_group_columns
 
 
-"""
-def get_group_columns(df: pd.DataFrame, group: Union[Text, None]):
-    '''
-    get a group of columns from multi-index columns DataFrame
-    Parameters
-    ----------
-    df : pd.DataFrame
-        with multi of columns.
-    group : str
-        the name of the feature group, i.e. the first level value of the group index.
-    '''
-    if group is None:
-        return df.columns
-    else:
-        return df.columns[df.columns.get_loc(group)]
-"""
-
-
 class DropLabelOutliners(Processor):
     def __init__(self, threshold=None, upper_threshold=None, lower_threshold=None):
         self.threshold = threshold

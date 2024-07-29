@@ -199,7 +199,7 @@ class StopLoss():
             There might still be some diferences between the Stop Loss threshold price set and
             the actual price on which the stock is sold on practice.
 
-            None of this applies however if 'soft_thresholds' is set to True. In that case
+            None of this applies if 'soft_thresholds' is set to True. In that case
             the function will return a list with the codes for the stocks with a close price
             lower than the stop_loss set.
 

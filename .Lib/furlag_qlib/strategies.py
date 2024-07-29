@@ -330,7 +330,7 @@ class KellyCriterionStrategy(BaseStrategy):
 
         #######################################################################################################
         # DETERMINE cash_spend
-        # (It's estimated, since we dont know what the the real buy price will be)
+        # (It's estimated, since we dont know what the the real buy price will be, we use last price)
 
         theorical_threshold = self.stop_loss.get_theorical_threshold(code, pred_start_time, pred_end_time)
 
@@ -525,6 +525,9 @@ class KellyCriterionStrategy(BaseStrategy):
 
                 # Update cash
                 available_cash -= cash_spend
+
+            else:  # Exit loop to speed up backtest
+                break
 
         ################################################################################################################
 
