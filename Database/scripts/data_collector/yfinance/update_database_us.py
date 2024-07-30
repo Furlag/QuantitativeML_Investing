@@ -30,7 +30,7 @@ tickers_sp400 = pd.read_csv(qlib_dir.joinpath("instruments/sp400_only_new.txt"),
 
 # Dates
 start = (datetime.today() - timedelta(days=5)).strftime('%Y-%m-%d')
-end = (datetime.today() + timedelta(days=1)).strftime('%Y-%m-%d')
+end = (datetime.today() - timedelta(days=1)).strftime('%Y-%m-%d')
 
 
 ########################################################################################################################
