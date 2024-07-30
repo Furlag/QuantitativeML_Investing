@@ -1,17 +1,18 @@
 import yfinance as yf
 
+from pathlib import Path
 from time import sleep
 
 
-def collect(
+def download_data(
     tickers,
-    qlib_dir,
     start=None, end=None, period="max",
     append_index_data='',
     interval_between_downloads=5,
     batch_size=50,
     threads=True,
-    data_dock_dir=None,
+
+    source_dir=None,
 ):
     '''
         tickers : str, list
@@ -44,9 +45,9 @@ def collect(
         REMEMBER: dump_bin.py must be in the same directory as this file!
     '''
 
-    if data_dock_dir is None:
-        data_dock_dir = qlib_dir.resolve().joinpath("data_dock")
-    data_dock_dir.mkdir(exist_ok=True, parents=True)
+    if source_dir is None:
+        source_dir = Path().resolve().joinpath("source")
+    source_dir.mkdir(exist_ok=True, parents=True)
     
     # -------------------------------------------------------
 
@@ -101,4 +102,4 @@ def collect(
             if append_index_data != '':  # add index data if any
                 ticker_data = ticker_data.merge(index_data, on='date', how='left', suffixes=("", "_idx"))
 
-            ticker_data.to_csv("%s/%s.csv" % (data_dock_dir, ticker))
+            ticker_data.to_csv("%s/%s.csv" % (source_dir, ticker))
