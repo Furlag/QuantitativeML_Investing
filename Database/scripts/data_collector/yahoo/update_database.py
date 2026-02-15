@@ -66,7 +66,7 @@ r.normalize_data()
 
 # Dump
 _dump = DumpDataAll(
-    csv_path=Path().resolve().joinpath("source"),
+    data_path=Path().resolve().joinpath("source"),
     qlib_dir=qlib_dir,
     exclude_fields="symbol,date",
     max_workers=4,
