@@ -11,29 +11,38 @@ class CommonIndicators():
 
 
     # Moving Average Convergence Divergence
-    def MACD(self, d=0, adapt=True):
-        if adapt:
+    def MACD(self, d=0, l1=12, l2=26, ls=9, use_log=False):
+        """
+        Flexible MACD for quant RNNs, with option to use log-prices or classic ratio.
+
+        d       : day offset (0 = today)
+        l1      : fast EMA window
+        l2      : slow EMA window
+        ls      : signal line EMA window
+        use_log : True -> use log-price differences (recommended for quant RNN)
+                False -> classic EMA1/EMA2 ratio
+
+        Returns the MACD histogram ready for RNN input.
+        """
+        if use_log:
             if d == 0:
-                field = """(
-                    (EMA($close, 12) / EMA($close, 26))
-                    - EMA((EMA($close, 12) / EMA($close, 26)), 9)
-                )"""
+                macd = f"(EMA(Log($close), {l1}) - EMA(Log($close), {l2}))"
+                signal = f"EMA({macd}, {ls})"
+                field = f"({macd} - {signal})"
             else:
-                field = """(
-                    (EMA(Ref($close, {d}), 12) / EMA(Ref($close, {d}), 26))
-                    - EMA((EMA(Ref($close, {d}), 12) / EMA(Ref($close, {d}), 26)), 9)
-                )""".format(d=d)
+                macd = f"(EMA(Log(Ref($close, {d})), {l1}) - EMA(Log(Ref($close, {d})), {l2}))"
+                signal = f"EMA({macd}, {ls})"
+                field = f"({macd} - {signal})"
         else:
             if d == 0:
-                field = """(
-                    (EMA($close, 12) - EMA($close, 26))
-                    - EMA((EMA($close, 12) - EMA($close, 26)), 9)
-                )"""
+                macd = f"(EMA($close, {l1}) / EMA($close, {l2}))"
+                signal = f"EMA({macd}, {ls})"
+                field = f"({macd} - {signal})"
             else:
-                field = """(
-                    (EMA(Ref($close, {d}), 12) - EMA(Ref($close, {d}), 26))
-                    - EMA((EMA(Ref($close, {d}), 12) - EMA(Ref($close, {d}), 26)), 9)
-                )""".format(d=d)
+                macd = f"(EMA(Ref($close, {d}), {l1}) / EMA(Ref($close, {d}), {l2}))"
+                signal = f"EMA({macd}, {ls})"
+                field = f"({macd} - {signal})"
+
         return field
 
 
@@ -139,20 +148,17 @@ class CommonIndicators():
 
 
     # Bollinger Bands
-    def Bollinger_Band(self, d=0, r=20, m=2, adapt=True):
-        if adapt:  # Adapted for machine learning
-            if d == 0:
-                field = "({m} * Std($close, {r})) / (Mean($close, {r}))".format(r=r, m=m)
-            else:
-                field = "({m} * Std(Ref($close, {d}), {r}) / Mean(Ref($close, {d}), {r}))".format(r=r, d=d, m=m)
-            return field
-        else:  # Original indicator
-            if d == 0:
-                field = "({m} * Std($close, {r})) + (Mean($close, {r}))".format(r=r, m=m)
-            else:
-                field = "({m} * Std(Ref($close, {d}), {r}) + Mean(Ref($close, {d}), {r}))".format(r=r, d=d, m=m)
-            return field
-
+    def Bollinger_Band(self, d=0, r=20, m=2):
+        if d == 0:
+            upper_band = f"(Mean($close, {r}) + {m} * Std($close, {r}))"
+            lower_band = f"(Mean($close, {r}) - {m} * Std($close, {r}))"
+            field = f"($close - {lower_band}) / ({upper_band} - {lower_band})"
+        else:
+            upper_band = f"(Mean(Ref($close, {d}), {r}) + {m} * Std(Ref($close, {d}), {r}))"
+            lower_band = f"(Mean(Ref($close, {d}), {r}) - {m} * Std(Ref($close, {d}), {r}))"
+            field = f"($close - {lower_band}) / ({upper_band} - {lower_band})"
+        return field
+        
 
     # Ichimoku Cloud
     def Ichimoku_Cloud__tenkan_sen(self, d=0):  # WARNING: Adapt for ML, don't use alone
@@ -200,7 +206,7 @@ class CommonIndicators():
     # Directional Indicators
     def Positive_DI(self, d=0, r=14):
         if d == 0:
-            field = """(
+            field = f"""(
                 If(
                     Mean(
                         Greater(
@@ -233,9 +239,10 @@ class CommonIndicators():
                         )
                     )
                 )
-            )""".format(r=r)
+            )"""
         else:
-            field = """(
+            d1 = d + 1
+            field = f"""(
                 If(
                     Mean(
                         Greater(
@@ -261,28 +268,28 @@ class CommonIndicators():
                             Greater(
                                 Ref($high, {d}) - Ref($low, {d}),
                                 Greater(
-                                    Abs(Ref($high, {d})-Ref($close, {d1})),
-                                    Abs(Ref($low, {d})-Ref($close, {d1}))
+                                    Abs(Ref($high, {d}) - Ref($close, {d1})),
+                                    Abs(Ref($low, {d}) - Ref($close, {d1}))
                                 )
                             ),
                             {r}
                         )
                     )
                 )
-            )""".format(d=d, d1=d+1, r=r)
+            )"""
         return field
 
 
     def Negative_DI(self, d=0, r=14):
         if d == 0:
-            field = """(
+            field = f"""(
                 If(
                     Mean(
                         Greater(
-                            $high-$low,
+                            $high - $low,
                             Greater(
-                                Abs($high-Ref($close, 1)),
-                                Abs($low-Ref($close, 1))
+                                Abs($high - Ref($close, 1)),
+                                Abs($low - Ref($close, 1))
                             )
                         ),
                         {r}
@@ -291,61 +298,62 @@ class CommonIndicators():
                     100 * Div(
                         EMA(
                             If(
-                                And($low-Ref($low, 1) > $high-Ref($high, 1), $low-Ref($low, 1) > 0),
-                                $low-Ref($low, 1),
+                                And($low - Ref($low, 1) > $high - Ref($high, 1), $low - Ref($low, 1) > 0),
+                                $low - Ref($low, 1),
                                 0
                             ),
                             {r}
                         ),
                         Mean(
                             Greater(
-                                $high-$low,
+                                $high - $low,
                                 Greater(
-                                    Abs($high-Ref($close, 1)),
-                                    Abs($low-Ref($close, 1))
+                                    Abs($high - Ref($close, 1)),
+                                    Abs($low - Ref($close, 1))
                                 )
                             ),
                             {r}
                         )
                     )
                 )
-            )""".format(r=r)
+            )"""
         else:
-            field = """(
+            d1 = d + 1
+            field = f"""(
                 If(
                     Mean(
                         Greater(
-                            Ref($high, %d)-Ref($low, %d),
+                            Ref($high, {d}) - Ref($low, {d}),
                             Greater(
-                                Abs(Ref($high, %d)-Ref($close, %d)),
-                                Abs(Ref($low, %d)-Ref($close, %d))
+                                Abs(Ref($high, {d}) - Ref($close, {d1})),
+                                Abs(Ref($low, {d}) - Ref($close, {d1}))
                             )
                         ),
-                        %d
+                        {r}
                     ) == 0,
                     0,
                     100 * Div(
                         EMA(
                             If(
-                                And(Ref($low, %d)-Ref($low, %d) > Ref($high, %d)-Ref($high, %d), Ref($low, %d)-Ref($low, %d) > 0),
-                                Ref($low, %d)-Ref($low, %d),
+                                And(Ref($low, {d}) - Ref($low, {d1}) > Ref($high, {d}) - Ref($high, {d1}), Ref($low, {d}) - Ref($low, {d1}) > 0),
+                                Ref($low, {d}) - Ref($low, {d1}),
                                 0
                             ),
-                            %d
+                            {r}
                         ),
                         Mean(
                             Greater(
-                                Ref($high, %d) - Ref($low, %d),
+                                Ref($high, {d}) - Ref($low, {d}),
                                 Greater(
-                                    Abs(Ref($high, %d)-Ref($close, %d)),
-                                    Abs(Ref($low, %d)-Ref($close, %d))
+                                    Abs(Ref($high, {d}) - Ref($close, {d1})),
+                                    Abs(Ref($low, {d}) - Ref($close, {d1}))
                                 )
                             ),
-                            %d
+                            {r}
                         )
                     )
                 )
-            )""" % (d, d, d, d+1, d, d+1, r, d, d+1, d, d+1, d, d+1, d, d+1, r, d, d, d, d+1, d, d+1, r)
+            )"""
         return field
 
 

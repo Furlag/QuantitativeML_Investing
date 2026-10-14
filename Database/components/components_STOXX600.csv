@@ -1,0 +1,540 @@
+name,ticker,country,currency
+British American Tobacco,BATS.L,United Kingdom,GBP
+HSBC,HSBA.L,United Kingdom,GBP
+Barclays,BARC.L,United Kingdom,GBP
+InterContinental Hotels Group,IHG.L,United Kingdom,GBP
+BP,BP.L,United Kingdom,GBP
+Next,NXT.L,United Kingdom,GBP
+Lloyds Banking Group,LLOY.L,United Kingdom,GBP
+Marks & Spencer,MKS.L,United Kingdom,GBP
+Bank of Ireland,BIRG.IR,United Kingdom,GBP
+NatWest Group,NWG.L,United Kingdom,GBP
+Prudential,PRU.L,United Kingdom,GBP
+ING Groep,INGA.AS,Netherlands,EUR
+Shell,SHELL.AS,Netherlands,EUR
+Heineken,HEIA.AS,Netherlands,EUR
+Aegon,AGN.AS,Netherlands,EUR
+Philips,PHIA.AS,Netherlands,EUR
+Telecom Italia,TIT.MI,Italy,EUR
+Stellantis NV,STLAM.MI,Italy,EUR
+Assicurazioni Generali,G.MI,Italy,EUR
+Snam,SRG.MI,Italy,EUR
+Pirelli & C,PIRC.MI,Italy,EUR
+Adecco,ADEN.SW,Switzerland,CHF
+Richemont,CFR.SW,Switzerland,CHF
+Julius Baer,BAER.SW,Switzerland,CHF
+ABB,ABBN.SW,Switzerland,CHF
+Holcim,HOLN.SW,Switzerland,CHF
+Logitech,LOGN.SW,Switzerland,CHF
+Clariant,CLN.SW,Switzerland,CHF
+Zurich Insurance Group,ZURN.SW,Switzerland,CHF
+Swatch Group,UHR.SW,Switzerland,CHF
+Swiss Life Holding,SLHN.SW,Switzerland,CHF
+Novartis,NOVN.SW,Switzerland,CHF
+Nestl�,NESN.SW,Switzerland,CHF
+ASM,ASM.AS,Netherlands,EUR
+Roche Holding,ROG.SW,Switzerland,CHF
+Lonza Group,LONN.SW,Switzerland,CHF
+Swisscom,SCMN.SW,Switzerland,CHF
+Corbion,CRBN.AS,Netherlands,EUR
+Wolters Kluwer,WKL.AS,Netherlands,EUR
+Allianz,ALV.DE,Germany,EUR
+Akzo Nobel,AKZA.AS,Netherlands,EUR
+Lufthansa,LHA.DE,Germany,EUR
+Siemens AG,SIE.DE,Germany,EUR
+Deutsche Bank AG,DBK.DE,Germany,EUR
+Continental AG,CON.DE,Germany,EUR
+Vopak,VPK.AS,Netherlands,EUR
+ABN AMRO,ABN.AS,Netherlands,EUR
+Porsche AG,P911.DE,Germany,EUR
+Henkel VZO,HEN3.DE,Germany,EUR
+Commerzbank,CBK.DE,Germany,EUR
+Deutsche Boerse,DB1.DE,Germany,EUR
+Norsk Hydro,NHY.OL,Norway,NOK
+Mowi,MOWI.OL,Norway,NOK
+Orkla,ORK.OL,Norway,NOK
+Equinor,EQNR.OL,Norway,NOK
+Tomra Systems,TOM.OL,Norway,NOK
+Storebrand,STB.OL,Norway,NOK
+Telenor,TEL.OL,Norway,NOK
+Yara International,YAR.OL,Norway,NOK
+Subsea 7,SUBC.OL,Norway,NOK
+Unilever PLC,UNA.AS,Netherlands,EUR
+Accor,AC.PA,France,EUR
+Air Liquide,AI.PA,France,EUR
+Capgemini,CAP.PA,France,EUR
+AXA,CS.PA,France,EUR
+Danone,BN.PA,France,EUR
+Ageas,AGS.BR,Belgium,EUR
+BNP Paribas,BNP.PA,France,EUR
+Bouygues,EN.PA,France,EUR
+LVMH (Louis Vuitton),MC.PA,France,EUR
+L'Or�al,OR.PA,France,EUR
+Schneider Electric,SU.PA,France,EUR
+Saint-Gobain,SGO.PA,France,EUR
+Carrefour,CA.PA,France,EUR
+Aedifica,AED.BR,Belgium,EUR
+Pernod Ricard,RI.PA,France,EUR
+Cr�dit Agricole,ACA.PA,France,EUR
+Warehouses De Pauw (WDP),WDP.BR,Belgium,EUR
+Soci�t� G�n�rale,GLE.PA,France,EUR
+Michelin,ML.PA,France,EUR
+Airbus,AIR.PA,France,EUR
+M�ller-Maersk B,MAERSK-B.CO,Denmark,DKK
+Sanofi,SAN.PA,France,EUR
+Vivendi,VIV.PA,France,EUR
+Novozymes,NSIS-B.CO,Denmark,DKK
+STMicroelectronics,STM,France,EUR
+Vinci,DG.PA,France,EUR
+Renault,RNO.PA,France,EUR
+Veolia Environnement,VIE.PA,France,EUR
+Galp Energia,GALP.LS,Portugal,EUR
+Jer�nimo Martins,JMT.LS,Portugal,EUR
+EDP,EDP.LS,Portugal,EUR
+ACS,ACS.MC,Spain,EUR
+BBVA,BBVA.MC,Spain,EUR
+Bankinter,BKT.MC,Spain,EUR
+CaixaBank,CABK.MC,Spain,EUR
+Coloplast,COLO-B.CO,Denmark,DKK
+Naturgy Energy,NTGY.MC,Spain,EUR
+BASF,BAS.DE,Germany,EUR
+Ferrovial,FER.MC,Spain,EUR
+Bayer,BAYN.DE,Germany,EUR
+Inditex,ITX.MC,Spain,EUR
+Repsol,REP.MC,Spain,EUR
+Iberdrola,IBE.MC,Spain,EUR
+Telef�nica,TEF.MC,Spain,EUR
+Adidas,ADS.DE,Germany,EUR
+Santander,SAN.MC,Spain,EUR
+Deutsche Post (DHL Group),DHL.DE,Germany,EUR
+Mercedes-Benz Group,MBG.DE,Germany,EUR
+Boliden,BOL.ST,Sweden,SEK
+Freenet AG,FNTN.DE,Germany,EUR
+Alfa Laval,ALFA.ST,Sweden,SEK
+GEA Group,G1A.DE,Germany,EUR
+K+S AG,SDF.DE,Germany,EUR
+Sandvik,SAND.ST,Sweden,SEK
+MTU Aero Engines,MTX.DE,Germany,EUR
+Orr�n Energy,ORRON.ST,Sweden,SEK
+Symrise AG,SY1.DE,Germany,EUR
+Hugo Boss AG,BOSS.DE,Germany,EUR
+Close Brothers,CBG.L,Germany,EUR
+Eurazeo,RF.PA,Germany,EUR
+E.ON SE,EOAN.DE,Germany,EUR
+Brenntag AG,BNR.DE,Germany,EUR
+Fuchs SE Pref,FPE3.DE,Germany,EUR
+Grenke,GLJ.DE,Germany,EUR
+Telia Company,TELIA.ST,Sweden,SEK
+Deutsche Wohnen,DWNI.DE,Germany,EUR
+Proximus,PROX.BR,Belgium,EUR
+Ackermans & van Haaren,ACKB.BR,Belgium,EUR
+Colruyt,COLR.BR,Belgium,EUR
+Cofinimmo,COFB.BR,Belgium,EUR
+KBC Groep,KBC.BR,Belgium,EUR
+Solvay,SOLB.BR,Belgium,EUR
+GBL (Groupe Bruxelles Lambert),GBLB.BR,Belgium,EUR
+UCB,UCB.BR,Belgium,EUR
+Danske Bank,DANSKE.CO,Denmark,DKK
+Carlsberg B,CARL-B.CO,Denmark,DKK
+DSV,DSV.CO,Denmark,DKK
+Novo Nordisk B,NOVO-B.CO,Denmark,DKK
+ProSiebenSat.1,PSM.DE,Germany,EUR
+LEG Immobilien,LEG.DE,Germany,EUR
+Genmab,GMAB.CO,Denmark,DKK
+GN Store Nord,GN.CO,Denmark,DKK
+Vestas Wind Systems,VWS.CO,Denmark,DKK
+Demant,DEMANT.CO,Denmark,DKK
+Tryg,TRYG.CO,Denmark,DKK
+KONE Oyj,KNEBV.HE,Finland,EUR
+Elisa Oyj,ELISA.HE,Finland,EUR
+Fortum,FORTUM.HE,Finland,EUR
+Kesko,KESKOB.HE,Finland,EUR
+Neste Oyj,NESTE.HE,Finland,EUR
+Stora Enso R,STERV.HE,Finland,EUR
+Sampo Oyj A,SAMPO.HE,Finland,EUR
+Nokian Renkaat,TYRES.HE,Finland,EUR
+UPM-Kymmene,UPM.HE,Finland,EUR
+Andritz AG,ANDR.VI,Austria,EUR
+Evonik,EVK.DE,Germany,EUR
+Zalando SE,ZAL.DE,Germany,EUR
+Siltronic AG,WAF.DE,Germany,EUR
+Scout24 AG,G24.DE,Germany,EUR
+Vonovia,VNA.DE,Germany,EUR
+Covestro,1COV.DE,Germany,EUR
+Uniper SE,UN0.DE,Germany,EUR
+Nokia Oyj,NOKIA.HE,Finland,EUR
+BMW ST,BMW.DE,Germany,EUR
+Fresenius Medical Care,FME.DE,Germany,EUR
+Deutsche Telekom,DTE.DE,Germany,EUR
+Merck KGaA,MRK.DE,Germany,EUR
+Infineon,IFX.DE,Germany,EUR
+Munich Re,MUV2.DE,Germany,EUR
+SAP,SAP.DE,Germany,EUR
+Thyssenkrupp,TKA.DE,Germany,EUR
+Rheinmetall,RHM.DE,Germany,EUR
+Vodafone Group,VOD.L,United Kingdom,GBP
+Lagard�re,MMB.PA,France,EUR
+Kering,KER.PA,France,EUR
+Unibail-Rodamco-Westfield,URW.PA,France,EUR
+Lanxess,LXS.DE,Germany,EUR
+Beiersdorf,BEI.DE,Germany,EUR
+Fresenius SE,FRE.DE,Germany,EUR
+HelloFresh,HFG.DE,Germany,EUR
+Siemens Healthineers,SHL.DE,Germany,EUR
+Hannover R�ck,HNR1.DE,Germany,EUR
+RWE,RWE.DE,Germany,EUR
+Nordea Bank,NDA-FI.HE,Finland,EUR
+Kerry Group,KRZ.IR,Ireland,EUR
+AIB Group,A5G.IR,Ireland,EUR
+Heidelberg Materials,HEI.DE,Germany,EUR
+Qiagen,QIA.DE,Germany,EUR
+United Internet,UTDI.DE,Germany,EUR
+Victrex,VCT.L,United Kingdom,GBP
+Ferguson,FERG.L,United Kingdom,GBP
+AstraZeneca,AZN.L,United Kingdom,GBP
+Bellway,BWY.L,United Kingdom,GBP
+Legal & General,LGEN.L,United Kingdom,GBP
+Imperial Brands,IMB.L,United Kingdom,GBP
+Reckitt Benckiser,RKT.L,United Kingdom,GBP
+Kingfisher,KGF.L,United Kingdom,GBP
+RELX,REL.L,United Kingdom,GBP
+Centrica,CNA.L,United Kingdom,GBP
+3i Group,III.L,United Kingdom,GBP
+WPP,WPP.L,United Kingdom,GBP
+BHP Group Ltd,BHP.L,United Kingdom,GBP
+Tesco,TSCO.L,United Kingdom,GBP
+Abrdn (Aberdeen),ABDN.L,United Kingdom,GBP
+Diageo,DGE.L,United Kingdom,GBP
+Hikma Pharmaceuticals,HIK.L,United Kingdom,GBP
+John Wood Group,WG.L,United Kingdom,GBP
+Investec,INVP.L,United Kingdom,GBP
+Rio Tinto,RIO.L,United Kingdom,GBP
+Johnson Matthey,JMAT.L,United Kingdom,GBP
+Anglo American,AAL.L,United Kingdom,GBP
+Capita,CPI.L,United Kingdom,GBP
+Bunzl,BNZL.L,United Kingdom,GBP
+Burberry,BRBY.L,United Kingdom,GBP
+GSK,GSK.L,United Kingdom,GBP
+Barratt Developments (Barratt Redrow),BTRW.L,United Kingdom,GBP
+Aviva,AV.L,United Kingdom,GBP
+Admiral Group,ADM.L,United Kingdom,GBP
+Sage Group,SGE.L,United Kingdom,GBP
+WH Smith,SMWH.L,United Kingdom,GBP
+Pearson,PSON.L,United Kingdom,GBP
+Hammerson,HMSO.L,United Kingdom,GBP
+Associated British Foods,ABF.L,United Kingdom,GBP
+Tullow Oil,TLW.L,United Kingdom,GBP
+London Stock Exchange Group,LSEG.L,United Kingdom,GBP
+BAE Systems,BA.L,United Kingdom,GBP
+Antofagasta,ANTO.L,United Kingdom,GBP
+Man Group,EMG.L,United Kingdom,GBP
+Rolls-Royce Holdings,RR.L,United Kingdom,GBP
+Whitbread,WTB.L,United Kingdom,GBP
+Pennon Group,PNN.L,United Kingdom,GBP
+Tate & Lyle,TATE.L,United Kingdom,GBP
+Persimmon,PSN.L,United Kingdom,GBP
+St. James�s Place,STJ.L,United Kingdom,GBP
+United Utilities,UU.L,United Kingdom,GBP
+Unilever,ULVR.L,United Kingdom,GBP
+CRH,CRH.L,United Kingdom,GBP
+SSE,SSE.L,United Kingdom,GBP
+Standard Chartered,STAN.L,United Kingdom,GBP
+British Land,BLND.L,United Kingdom,GBP
+Informa,INF.L,United Kingdom,GBP
+Weir Group,WEIR.L,United Kingdom,GBP
+Ashmore Group,ASHM.L,United Kingdom,GBP
+Severn Trent,SVT.L,United Kingdom,GBP
+Travis Perkins,TPK.L,United Kingdom,GBP
+Melrose Industries,MRO.L,United Kingdom,GBP
+Smiths Group,SMIN.L,United Kingdom,GBP
+Hays,HAS.L,United Kingdom,GBP
+IG Group,IGG.L,United Kingdom,GBP
+Intermediate Capital Group (ICG),ICG.L,United Kingdom,GBP
+Smith & Nephew,SN.L,United Kingdom,GBP
+Intertek,ITRK.L,United Kingdom,GBP
+Mondi,MNDI.L,United Kingdom,GBP
+Rotork,ROR.L,United Kingdom,GBP
+J Sainsbury,SBRY.L,United Kingdom,GBP
+Croda International,CRDA.L,United Kingdom,GBP
+National Grid,NG.L,United Kingdom,GBP
+IMI PLC,IMI.L,United Kingdom,GBP
+BT Group,BT-A.L,United Kingdom,GBP
+Inchcape,INCH.L,United Kingdom,GBP
+Segro,SGRO.L,United Kingdom,GBP
+Schroders,SDR.L,United Kingdom,GBP
+ITV,ITV.L,United Kingdom,GBP
+Rentokil Initial,RTO.L,United Kingdom,GBP
+Compass Group,CPG.L,United Kingdom,GBP
+RS Group,RS1.L,United Kingdom,GBP
+Flutter Entertainment,FLTR.L,United Kingdom,GBP
+Carnival,CCL.L,United Kingdom,GBP
+Hiscox,HSX.L,United Kingdom,GBP
+Land Securities,LAND.L,United Kingdom,GBP
+International Workplace Group (IWG),IWG.L,United Kingdom,GBP
+Halma,HLMA.L,United Kingdom,GBP
+Rightmove,RMV.L,United Kingdom,GBP
+Taylor Wimpey,TW.L,United Kingdom,GBP
+Spirax?Sarco Engineering,SPX.L,United Kingdom,GBP
+Beazley,BEZ.L,United Kingdom,GBP
+Ashtead Group,AHT.L,United Kingdom,GBP
+Unite Group,UTG.L,United Kingdom,GBP
+Derwent London,DLN.L,United Kingdom,GBP
+Berkeley Group,BKG.L,United Kingdom,GBP
+IAG (British Airways),IAG.L,United Kingdom,GBP
+LondonMetric Property,LMP.L,United Kingdom,GBP
+Randstad,RAND.AS,Netherlands,EUR
+Kingspan,KRX.IR,United Kingdom,GBP
+Tritax Big Box,BBOX.L,United Kingdom,GBP
+SBM Offshore,SBMO.AS,Netherlands,EUR
+Auto Trader Group,AUTO.L,United Kingdom,GBP
+B&M European Value Retail,BME.L,United Kingdom,GBP
+Koninklijke Ahold Delhaize NV,AD.AS,Netherlands,EUR
+ArcelorMittal SA,MT.AS,Netherlands,EUR
+Koninklijke KPN NV,KPN.AS,Netherlands,EUR
+ASML Holding NV,ASML.AS,Netherlands,EUR
+Aalberts NV,AALB.AS,Netherlands,EUR
+Prysmian SpA,PRY.MI,Italy,EUR
+Intesa Sanpaolo SpA,ISP.MI,Italy,EUR
+Thales SA,HO.PA,France,EUR
+Gecina SA,GFC.PA,France,EUR
+UniCredit SpA,UCG.MI,Italy,EUR
+Dassault Systemes SE,DSY.PA,France,EUR
+Forvia SE,FRVIA.PA,France,EUR
+Casino Guichard Perrachon SA,CO.PA,France,EUR
+Enagas SA,ENG.MC,Spain,EUR
+Aeroports de Paris SA,ADP.PA,France,EUR
+Enel SpA,ENEL.MI,Italy,EUR
+Eurofins Scientific SE,ERF.PA,France,EUR
+Tenaris SA,TEN.MI,Italy,EUR
+Rexel SA,RXL.PA,France,EUR
+Remy Cointreau SA,RCO.PA,France,EUR
+Eni SpA,ENI.MI,Italy,EUR
+SES SA,SESG.PA,France,EUR
+Grifols SA,GRF.MC,Spain,EUR
+Publicis Groupe SA,PUB.PA,France,EUR
+Arkema SA,AKE.PA,France,EUR
+Sodexo SA,SW.PA,France,EUR
+Ubisoft Entertainment SA,UBI.PA,France,EUR
+Hermes International SCA,RMS.PA,France,EUR
+Soitec SA,SOI.PA,France,EUR
+Safran SA,SAF.PA,France,EUR
+Wendel SE,MF.PA,France,EUR
+Eiffage SA,FGR.PA,France,EUR
+SEB SA,SK.PA,France,EUR
+Redeia Corporacion SA,RED.MC,Spain,EUR
+Banco de Sabadell SA,SAB.MC,Spain,EUR
+Sartorius Stedim Biotech SA,DIM.PA,France,EUR
+Amadeus IT Group SA,AMS.MC,Spain,EUR
+Eutelsat Communications SA,ETL.PA,France,EUR
+Atos SE,ATO.PA,France,EUR
+Terna SpA,TRN.MI,Italy,EUR
+Valeo SE,FR.PA,France,EUR
+Mediobanca SpA,MB.MI,Italy,EUR
+Banco BPM SpA,BAMI.MI,Italy,EUR
+Saipem SpA,SPM.MI,Italy,EUR
+Alten SA,ATE.PA,France,EUR
+Leonardo SpA,LDO.MI,Italy,EUR
+Klepierre SA,LI.PA,France,EUR
+Ipsen SA,IPN.PA,France,EUR
+Emeis SA,EMEIS.PA,France,EUR
+JCDecaux SE,DEC.PA,France,EUR
+bioM�rieux SA,BIM.PA,France,EUR
+A2A SpA,A2A.MI,Italy,EUR
+Sopra Steria Group SA,SOP.PA,France,EUR
+Rubis SCA,RUI.PA,France,EUR
+Davide Campari-Milano NV,CPR.MI,Italy,EUR
+PKO Bank Polski SA,PKO.WA,Poland,PLN
+W�rtsil� Oyj Abp,WRT1V.HE,Finland,EUR
+Bank Polska Kasa Opieki SA,PEO.WA,Poland,PLN
+KGHM Polska Miedz SA,KGH.WA,Poland,PLN
+Polski Koncern Naftowy ORLEN SA,PKN.WA,Poland,PLN
+Bureau Veritas SA,BVI.PA,France,EUR
+DiaSorin SpA,DIA.MI,Italy,EUR
+Inmobiliaria Colonial SOCIMI SA,COL.MC,Spain,EUR
+Icade SA,ICAD.PA,France,EUR
+Amplifon SpA,AMP.MI,Italy,EUR
+Fresnillo PLC,FRES.L,United Kingdom,GBP
+Interpump Group SpA,IP.MI,Italy,EUR
+Anheuser-Busch InBev SA/NV,ABI.BR,Belgium,EUR
+Experian PLC,EXPN.L,United Kingdom,GBP
+Infrastrutture Wireless Italiane SpA,INW.MI,Italy,EUR
+Nexi SpA,NEXI.MI,Italy,EUR
+Howden Joinery Group PLC,HWDN.L,United Kingdom,GBP
+DNB Bank ASA,DNB.OL,Norway,NOK
+Edenred SE,EDEN.PA,France,EUR
+Gjensidige Forsikring ASA,GJF.OL,Norway,NOK
+Ocado Group PLC,OCDO.L,United Kingdom,GBP
+Air France-KLM SA,AF.PA,France,EUR
+Powszechny Zaklad Ubezpieczen SA,PZU.WA,Poland,PLN
+Glencore PLC,GLEN.L,United Kingdom,GBP
+Engie SA,ENGI.PA,France,EUR
+Endesa SA,ELE.MC,Spain,EUR
+SGS SA,SGSN.SW,Switzerland,CHF
+Umicore SA,UMI.BR,Belgium,EUR
+TechnipFMC PLC,FTI,United States,USD
+JD Sports Fashion PLC,JD.L,United Kingdom,GBP
+Jupiter Fund Management PLC,JUP.L,United Kingdom,GBP
+EssilorLuxottica SA,EL.PA,France,EUR
+Standard Life plc�,SDLF.L,United Kingdom,GBP
+Smurfit WestRock PLC,SWR.L,United Kingdom,GBP
+Orange SA,ORA.PA,France,EUR
+Alstom SA,ALO.PA,France,EUR
+OC Oerlikon Corporation AG,OERL.SW,Switzerland,CHF
+TotalEnergies SE,TTE.PA,France,EUR
+SCOR SE,SCR.PA,France,EUR
+Covivio SA,COV.PA,France,EUR
+Legrand SA,LR.PA,France,EUR
+Elia Group SA/NV,ELI.BR,Belgium,EUR
+Galapagos NV,GLPG.AS,Netherlands,EUR
+Sofina SA,SOF.BR,Belgium,EUR
+Teleperformance SE,TEP.PA,France,EUR
+Dassault Aviation SA,AM.PA,France,EUR
+Getlink SE,GET.PA,France,EUR
+Bollore SE,BOL.PA,France,EUR
+Hera SpA,HER.MI,Italy,EUR
+Electrolux B,ELUX-B.ST,Sweden,SEK
+Recordati,REC.MI,Italy,EUR
+Atlas Copco A,ATCO-A.ST,Sweden,SEK
+LM Ericsson B,ERIC-B.ST,Sweden,SEK
+ASSA ABLOY B,ASSA-B.ST,Sweden,SEK
+SEB A,SEB-A.ST,Sweden,SEK
+Investor B,INVE-B.ST,Sweden,SEK
+H&M B,HM-B.ST,Sweden,SEK
+SCA B,SCA-B.ST,Sweden,SEK
+Securitas B,SECU-B.ST,Sweden,SEK
+Swedbank A,SWED-A.ST,Sweden,SEK
+Skanska B,SKA-B.ST,Sweden,SEK
+Svenska Handelsbanken A,SHB-A.ST,Sweden,SEK
+Volvo B,VOLV-B.ST,Sweden,SEK
+CTS Eventim,EVD.DE,Germany,EUR
+Tele2 B,TEL2-B.ST,Sweden,SEK
+TAG Immobilien,TEG.DE,Germany,EUR
+Evotec,EVT.DE,Germany,EUR
+Nemetschek,NEM.DE,Germany,EUR
+Sartorius Pref,SRT3.DE,Germany,EUR
+SKF B,SKF-B.ST,Sweden,SEK
+Volkswagen VZO,VOW3.DE,Germany,EUR
+Carl Zeiss Meditec,AFX.DE,Germany,EUR
+Castellum,CAST.ST,Sweden,SEK
+Bechtle,BC8.DE,Germany,EUR
+DCC,DCC.L,United Kingdom,GBP
+AAK,AAK.ST,Sweden,SEK
+Afry AB,AFRY.ST,Sweden,SEK
+Fastighets Balder B,BALD-B.ST,Sweden,SEK
+Beijer Ref,BEIJ-B.ST,Sweden,SEK
+HEXPOL B,HPOL-B.ST,Sweden,SEK
+Indutrade,INDT.ST,Sweden,SEK
+Elekta B,EKTA-B.ST,Sweden,SEK
+Fabege,FABG.ST,Sweden,SEK
+Ambu B,AMBU-B.CO,Denmark,DKK
+Pandora,PNDORA.CO,Denmark,DKK
+Royal Unibrew,RBREW.CO,Denmark,DKK
+Huhtamaki,HUH1V.HE,Finland,EUR
+Orion B,ORNBV.HE,Finland,EUR
+Entain,ENT.L,United Kingdom,GBP
+Getinge B,GETI-B.ST,Sweden,SEK
+CD PROJEKT,CDR.WA,Poland,PLN
+Geberit,GEBN.SW,Switzerland,CHF
+Hexagon B,HEXA-B.ST,Sweden,SEK
+Heineken,HEIA.AS,Netherlands,EUR
+Aker BP,AKRBP.OL,Norway,NOK
+Holmen,HOLM-B.ST,Sweden,SEK
+SalMar,SALM.OL,Norway,NOK
+Husqvarna B,HUSQ-B.ST,Sweden,SEK
+Industrivarden A,INDU-A.ST,Sweden,SEK
+CNH Industrial NV,CNH,United States,USD
+Coca Cola HBC,CCH.L,United Kingdom,GBP
+Glanbia,GL9.IR,Ireland,EUR
+Kinnevik B,KINV-B.ST,Sweden,SEK
+ams OSRAM,AMS.SW,Switzerland,CHF
+Belimo Holding,BEAN.SW,Switzerland,CHF
+Allreal Holding,ALLN.SW,Switzerland,CHF
+Flughafen Z�rich,FHZN.SW,Switzerland,CHF
+Tecan Group,TECN.SW,Switzerland,CHF
+Ems-Chemie,EMSN.SW,Switzerland,CHF
+Moncler,MONC.MI,Italy,EUR
+Kion Group,KGX.DE,Germany,EUR
+Sika,SIKA.SW,Switzerland,CHF
+Swiss Prime Site,SPSN.SW,Switzerland,CHF
+Barry Callebaut,BARN.SW,Switzerland,CHF
+Lindt & Spr�ngli N,LISN.SW,Switzerland,CHF
+Lundbergf�retagen B,LUND-B.ST,Sweden,SEK
+PSP Swiss Property,PSPN.SW,Switzerland,CHF
+Partners Group,PGHN.SW,Switzerland,CHF
+Schindler PS,SCHP.SW,Switzerland,CHF
+Kuehne & Nagel,KNIN.SW,Switzerland,CHF
+Nel ASA,NEL.OL,Norway,NOK
+Valmet,VALMT.HE,Finland,EUR
+Georg Fischer,GF.SW,Switzerland,CHF
+Sonova,SOON.SW,Switzerland,CHF
+SAAB B,SAAB-B.ST,Sweden,SEK
+Merlin Properties,MRL.MC,Spain,EUR
+FinecoBank,FBK.MI,Italy,EUR
+Trelleborg B,TREL-B.ST,Sweden,SEK
+SSP Group,SSPG.L,United Kingdom,GBP
+NIBE Industrier B,NIBE-B.ST,Sweden,SEK
+Scatec,SCATC.OL,Norway,NOK
+Spie,SPIE.PA,France,EUR
+Hella,HLE.DE,Germany,EUR
+ISS A/S,ISS.CO,Denmark,DKK
+NN Group,NN.AS,Netherlands,EUR
+IMCD,IMCD.AS,Netherlands,EUR
+Euronext,ENX.PA,France,EUR
+Argenx,ARGX.BR,Belgium,EUR
+UBS Group,UBSG.SW,Switzerland,CHF
+Aena,AENA.MC,Spain,EUR
+Elis,ELIS.PA,France,EUR
+Swedish Orphan Biovitrum,SOBI.ST,Sweden,SEK
+Sagax B,SAGA-B.ST,Sweden,SEK
+Evolution AB,EVO.ST,Sweden,SEK
+Cembra Money Bank,CMBN.SW,Switzerland,CHF
+Straumann Holding,STMN.SW,Switzerland,CHF
+Temenos,TEMN.SW,Switzerland,CHF
+Cellnex Telecom,CLNX.MC,Spain,EUR
+Worldline,WLN.PA,France,EUR
+Dometic Group,DOM.ST,Sweden,SEK
+Essity B,ESSITY-B.ST,Sweden,SEK
+Puma SE,PUM.DE,Germany,EUR
+Epiroc A,EPI-A.ST,Sweden,SEK
+Ferrari NV,RACE,United States,USD
+Poste Italiane,PST.MI,Italy,EUR
+Viaplay,VPLAY-B.ST,Sweden,SEK
+Amundi,AMUN.PA,France,EUR
+EQT AB,EQT.ST,Sweden,SEK
+Adler Group,ADJ.DE,Germany,EUR
+Grand City Properties,GYC.DE,Germany,EUR
+Swiss Re,SREN.SW,Switzerland,CHF
+Avolta (ex?Dufry),AVOL.SW,Switzerland,CHF
+Aroundtown,AT1.DE,Germany,EUR
+VAT Group,VACN.SW,Switzerland,CHF
+Signify,LIGHT.AS,Netherlands,EUR
+ASR Nederland,ASRNL.AS,Netherlands,EUR
+�rsted,ORSTED.CO,Denmark,DKK
+Givaudan,GIVN.SW,Switzerland,CHF
+Helvetia,HBAN.SW,Switzerland,CHF
+SIG Group,SIGN.SW,Switzerland,CHF
+ConvaTec Group,CTEC.L,United Kingdom,GBP
+Italgas,IG.MI,Italy,EUR
+Galenica Sant�,GALE.SW,Switzerland,CHF
+Dino Polska,DNP.WA,Poland,PLN
+Alcon,ALC.SW,Switzerland,CHF
+Delivery Hero,DHER.DE,Germany,EUR
+Erste Group Bank,EBS.VI,Austria,EUR
+CPI Property Group,CPI.VI,Austria,EUR
+Adyen,ADYEN.AS,Netherlands,EUR
+Kojamo,KOJAMO.HE,Finland,EUR
+OMV,OMV.VI,Austria,EUR
+Quilter,QLT.L,United Kingdom,GBP
+Raiffeisen Bank Int.,RBI.VI,Austria,EUR
+Knorr-Bremse,KBX.DE,Germany,EUR
+Voestalpine,VOE.VI,Austria,EUR
+Verbund,VER.VI,Austria,EUR
+Stadler Rail,SRAIL.SW,Switzerland,CHF
+Wienerberger,WIE.VI,Austria,EUR
+Prosus,PRX.AS,Netherlands,EUR
+Santander Bank Polska,SPL.WA,Poland,PLN
+SoftwareOne,SWON.SW,Switzerland,CHF
+M&G,MNG.L,United Kingdom,GBP
+JDE Peet�s,JDEP.AS,Netherlands,EUR
+THG Holdings,THG.L,United Kingdom,GBP
+Allegro,ALE.WA,Poland,PLN
